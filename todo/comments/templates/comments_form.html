@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Post a new comment {% endblock %}
+{% if error_message%}
+{{ error_message }}
+{% endif %}
+
+{% block body %}
+<div class="main">
+  <div class="content">
+    <div class="container_12">
+    	{% for form in form %}
+<form method='post' action='.'>
+	{% csrf_token %}
+	<input type="text" name="name"><br>
+	<input type="submit" name="submit" value="Submit">
+</form>
+{% endfor %}
+<a href="{% url 'comments' %}"> <-Go Back <-</a>
+
+	</div>
+  </div>
+</div>
+{% endblock %}

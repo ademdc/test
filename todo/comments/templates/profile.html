@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% if user.is_authenticated %}
+{% block body%}
+<div class="main">
+  <div class="content">
+    <div class="container_12">
+    	<h2>Welcome <b>{{user}}</b></h2><br><hr>
+    	<h3>Your email is: <b>{{user.email}}</b></h3>
+	</div>
+  </div>
+</div>
+{% endblock %}
+{% endif %}

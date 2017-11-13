@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title%} Comments {% endblock %}
+
+{%block body%} 
+<div class="main">
+  <div class="content">
+    <div class="container_12">
+
+	<h2>This is the login page</h2>
+	<br><hr>
+	<form action='.' method="post">
+		{% csrf_token %}
+		{%include 'form_template.html'%}
+		<input type="submit" name="submit" value="Submit">
+	</form>
+	</div>
+  </div>
+</div>
+{%endblock%}

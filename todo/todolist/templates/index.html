@@ -1,0 +1,50 @@
+{% include 'partials/header.html' %}
+
+  <div class="content page1">
+    <div class="container_12">
+      
+      <div class="grid_5">
+        
+        <h2>Todos</h2>
+        
+        {% for todo in todos %}
+        <ul class="list">
+          <li><a href="todo/{{todo.id}}"><b>{{ todo.name }}</b>: </a>{{ todo.description }}</li>
+        </ul>
+        {% endfor %}
+      <br>
+      <br>
+        <a class="btn btn-success" href='/add'>Add Todo</a>
+        <h2>Users</h2>
+        {% for users in user %}
+        <ul class="list">
+          <li><a href="#">{{ users.name }} {{ users.surname }}</a></li>
+        </ul>
+        {% endfor %}
+      </div>
+      <div class="clear"></div>
+
+
+      
+      <div class="clear"></div>
+      <div class="bottom_block">
+       
+        <div class="grid_6">
+          <h3>Email Updates</h3>
+          <p class="col1">Join our digital mailing list and get news<br>
+            deals and be first to know about events</p>
+
+          <form id="newsletter" action="/" method="post">
+            {% csrf_token %}
+            <div class="success">Your subscribe request has been sent!</div>
+            <label class="email">
+              <input type="email" name="email" value="Enter e-mail address" >
+              <a href="#" class="btn" data-type="submit">subscribe</a> <span class="error">*This is not a valid email address.</span> </label>
+          </form>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+{% include 'partials/footer.html' %}
